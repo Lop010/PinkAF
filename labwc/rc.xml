@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+
+<labwc_config>
+
+  <core>
+    <gap>5</gap>
+  </core>
+
+  <theme>
+    <name>Arctic</name>
+    <cornerRadius>0</cornerRadius>
+    <!-- <font name="azukifontB" size="15" /> -->
+  </theme>
+
+  <keyboard>
+    <default />
+    <!-- Use a different terminal emulator -->
+    <keybind key="W-Return">
+      <action name="Execute" command="alacritty" />
+    </keybind>
+    <!--
+      Remove a previously defined keybind
+      A shorter alternative is <keybind key="W-F4" />
+    -->
+    <keybind key="W-F4">
+      <action name="None" />
+    </keybind>
+    <keybind key="C-A-space">
+     <action name="Execute">
+      <command>rofi -show drun -show-icons</command>
+     </action>
+    </keybind>
+    <keybind key="A-space">
+     <action name="Execute">
+      <command>polybar</command>
+     </action>
+    </keybind>
+    <keybind key="W-S-s">
+     <action name="Execute">
+      <command>/home/lop01/.config/labwc/scripts/wayland_screenshot.sh</command>
+     </action>
+    </keybind>
+  </keyboard>
+
+<!-- Thanks a lot to Tail-R (github) for inspiration -->
+<theme>
+  <name>Arctic</name>
+  <titleLayout>LSMC</titleLayout>
+  <!--
+      available characters are NDSLIMC, each can occur at most once.
+      N: window icon
+      L: window label (AKA title).
+      I: iconify
+      M: maximize
+      C: close
+      S: shade (roll up/down)
+      D: omnipresent (on all desktops).
+  -->
+  <keepBorder>yes</keepBorder>
+  <animateIconify>yes</animateIconify>
+  
+      <font place="ActiveWindow">
+      <name>azukifontB</name>
+      <size>15</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="InactiveWindow">
+      <name>azukifontB</name>
+      <size>15</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="MenuItem">
+      <name>azukifontB</name>
+      <size>15</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+    <font place="OnScreenDisplay">
+      <name>azukifontB</name>
+      <size>10</size>
+      <slant>normal</slant>
+      <weight>normal</weight>
+    </font>
+</theme>
+
+  <mouse>
+    <default />
+    <!-- Show a custom menu on desktop right click -->
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="some-custom-menu" />
+      </mousebind>
+    </context>
+  </mouse>
+
+</labwc_config>
